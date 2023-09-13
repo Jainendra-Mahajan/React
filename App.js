@@ -1,22 +1,5 @@
-/**
- <div id = "parent">
-    <div id = "child">
-        <h1>This is h1</h1>
-        <h2>This is h2 </h2>
-    </div>
- </div>
-
-  <div id = "parent">
-    <div id = "child">
-        <h1>This is h1</h1>
-        <h2>This is h2 </h2>
-    </div>
- </div>
- */
-
-// const heading = React.createElement("h1", // This will create element same as we create in JS but returns object.
-//  {id: "heading", abc: "123"},
-//   "Hello World from React"); 
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 const heading = [React.createElement("div", {id: "parent"}, 
 React.createElement("div", {id: "child"}, 
