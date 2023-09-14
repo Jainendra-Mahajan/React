@@ -1,0 +1,32 @@
+Part 1 - 
+
+CDN
+Cross origin - Cross-Origin Resource Sharing (CORS) refers to the method that allows you to make requests to the server deployed at a different domain.
+
+- Through CDN we can import some library which are hosted somewhere are we are using that as service.
+- For React we can use React CDN and use it in our code which has 2 links - 
+
+1. Only React link - Has all react functionality
+2. With DOM link - Acts as a bridge b/w browsers and react as browsers don’t understand react so it has DOM powers to be used.
+3. Why there is a need of two links - As React is used on other platforms as well like React native , 3d so it will be helpful to segregate. 
+
+Note - When the render code is executed the tags present inside div id root will be replaced by react code. It will not be appended.
+
+React is a Js Library as it can be used at a small piece of code such as header , footer , side bar as framework has lots of features.
+
+Crossorigin - CORS stands for Cross-Origin Resource Sharing, and is a mechanism that allows resources on a web page to be requested from another domain outside their own domain. It defines a way of how a browser and server can interact to determine whether it is safe to allow the cross-origin request. CORS allows servers to specify who can access the assets on the server, among many other things.
+
+Difference between react and react DOM - 
+As the name implies, ReactDOM is the glue between React and the DOM. For everything else, there’s React. You use React to define and create your elements, for lifecycle hooks, etc. i.e. the guts of a React application.
+So, in brief:
+* React: a javascript library, designed for building user interfaces
+* React-DOM: a complimentary library to React which glues React to the browser DOM
+
+
+react.prod.js vs react.dev.js
+The production version will be optimized in a few ways--smaller file size by minimizing variable names and removing white space, etc--whereas the development version will remain readable, might include source maps, etc., making it better for debugging and development usage. Functionally they're the same
+
+
+Difference between Async and defer - 
+- In Async - HTML parsing(execution)  is started and in parallel scripts are also downloaded but when script tag is encountered HTML parsing stops and script executed .
+- In defer  - HTML parsing and script is downloaded in parallel and run at the end.
