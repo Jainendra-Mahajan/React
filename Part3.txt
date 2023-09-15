@@ -1,0 +1,52 @@
+Part - 3
+
+- In package.json we write the script to build our development mode code or production build.
+- So if we want to know how to run a project in a company just go to their package.json and check scripts.
+- npm run start = npm start. 
+- but it won’t work for npm build. We should use npm run build
+- React.element is an object not a HTML element.
+- When we render it then it becomes a element which we interact ReactDOM
+- React and JSX are different things.
+- JSX means it makes dev life easy to create React Element
+- JSX is different that HTML
+- JSX is a HTML like or XML like syntax
+- JSX is not HTML inside JS
+
+At the backend - JSX => React.createElement => Object => HTML Element.
+So the conversion of JSX to reactElement is done by babel.
+When we installed Parcel it automatically installed babel inside node_modules.
+
+Babel is a JS compiler or Transpiler which converts the JSX code to an understandable code for JS engine.
+
+If we have to provide attributes to the JSX we need to use Camelcase
+H/W - Need to find different JSX attributes such as image , etc.
+
+
+React Component
+
+There are 2 types of component - 
+1. Class based component (OLD) —> 
+2. Functional base component (NEW) —> It is a simple JS function which returns some JSX code (or it returns a react element)
+
+Eg. Const heading = () => {
+return <h1> Hello World </h1>;
+};
+
+To render an React Component we use root.render(<heading/>); 
+We use the angular brackets as babel undestands it that it is component so it will render it accordingly.
+
+
+Component  composition -> Using component inside n component 
+Eg. Used Title as another component within Heading component
+
+const HeadingComponent = () => (
+    <div>
+        <Title/>
+        <h1>This is Heading Component</h1>
+    </div>
+)
+
+If we want to use react element in our React component we just have to use { title }
+
+- JSX is so powerful that if any api call is made and if it is malicious so JSX will first check if it is correct data or not which will help to secure the website from executing scripts from attacker.
+- We can write component inside an element and vice versa.
