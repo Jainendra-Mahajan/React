@@ -1,29 +1,60 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+//1-17-21
+const Header = () => {
+    return (
+        <div className="header">
+            <div className="logo-container">
+                <img className="logo" src="https://i.pinimg.com/originals/98/f1/ea/98f1ea009fdb4e2c57481028c6c5034d.png" alt="logo" />
+            </div>
 
-// const heading = React.createElement("h1" , {id: "heading"}, "Hello World from React");
+            <div className="nav-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                    <li>Cart</li>
+                </ul>
+            </div>
+        </div>
+    );
+};
 
-// jsx --> React.createElement --> JS object --> HTML Element
-const jsxHeading = <h1 id= "heading">  Hello World from JSX</h1>
+const ResCard = (props) => {
+    const {resname , menu , image} = props;
+    return (
+        <div className="res-card" style={{backgroundColor : "#f0f0f0"}}>
+            <img 
+            className="res-logo"
+            src={image} alt="card-logo" />
+            <h3 style={{margin:"auto"}}>{resname}</h3>
+            <h4>Rating 4.5</h4>
+            <h4>{menu}</h4>
+            <h4>20 minutes</h4>
+        </div>
+    );
+}
+const Body = () => {
+    return (
+        <div className="body">
+            <div className="search">search</div>
+            <div className="card">
+                <ResCard resname="Style Foods" menu="Misal , Idli , Vada" image="https://www.vegrecipesofindia.com/wp-content/uploads/2011/06/misal-pav-1v.jpg"/>
+                <ResCard resname="KFC" menu="Chicken wings Fast Foods" image = "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xs/D-K303.jpg?ver=33.17"/>
+                
+            </div>
+        </div>
+    );
+};
 
-const Title = () => (<h1>This is the title from another component</h1>)
-
-const title = (<h1>This is title element</h1>);
-
-//React component
-const HeadingComponent = () => (
-    <div>
-        {title}
-        <Title/>
-        {Title()}
-        <Title></Title>
-        {/* All the three title above are of same use */}
-        <h1>This is Heading Component</h1>
-    </div>
-)
+const AppComponent = () => {
+    return (
+        <div className="app">
+            <Header/>
+            <Body/>
+        </div>
+    );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-//This root is for DOM to connect it with JS.
-
-root.render(<HeadingComponent/>);
-//Taking heading and converting into HTML tag and render on root.
+root.render(<AppComponent/>);
