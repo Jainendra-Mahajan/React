@@ -1,0 +1,98 @@
+Part 4 - Theory
+
+1. Is JSX Mandatory for React?
+- No it is not mandatory to use JSX in react.
+- We can write code in simple JS as well.
+- We use JSX as in React we need to write React.createElement(“div” , {passing props here} , “The value”);
+- So to make developer experience better we use JSX. Otherwise we can use JS as well.
+
+2. Is ES6 Mandatory for react?
+- No it is not a mandatory to use ES6 but as mentioned above ES6 makes the code more maintainable and explainable.
+
+3. {TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} in JSX.
+- a. {TitleComponent } - As it Is wrapped within {} so the value inside can be a JS variable or an expression.
+- b. {<TitleComponent/>} - This value represents a component which will return some JSX value
+-  C. <TitleComponent /> and <TitleComponent></TitleComponent> - Both the terms are equivalent as both will return some JSX value.
+- We use <TitleComponent></TitleComponent> when we want to define some child Component within that.
+- Eg. 
+
+<TitleComponent>
+    <FirstChildComponent />
+    <SecondChildComponent />
+    <ThirdChildComponent />
+</TitleComponent>
+
+
+4. Comments in JSX -  {/*comment here*/} - Simple select the line which you want to make comment and press cmd + /.
+
+5. What is <React.fragment></React.fragment> and <></>?
+- Fragments allows you to return multiple elements from a Component.
+- And <></> is == <React.fragment></React.fragment> as <></> is shorthand.
+
+So eg. would be 
+Before using Fragments - 
+return (
+        <Div>
+            <Header />
+            <Navigation />
+            <Main />
+            <Footer />
+        </Div>
+    );
+
+So in above eg when HTML would be rendering it would be adding an extra node of DIV which we used to wrap but it is not very useful.
+
+So, After using fragments - that div we do require to add any more.
+Note - The shorthand version does not support the key attribute.
+
+return (
+        <React.Fragment>
+            <Header />
+            <Navigation />
+            <Main />
+            <Footer />
+        </React.Fragment>
+    );
+
+return (
+        <>
+            <Header />
+            <Navigation />
+            <Main />
+            <Footer />
+        </>
+    );
+
+6. What is Reconciliation ? 
+- Reconciliation is the process through which React updates the Browser DOM and makes React work faster. React use a diffing algorithm so that component updates are predictable and faster. React would first calculate the difference between the real DOM and the copy of DOM (Virtual DOM) when there's an update of components. React stores a copy of Browser DOM which is called Virtual DOM. When we make changes or add data, React creates a new Virtual DOM and compares it with the previous one. Comparison is done by Diffing Algorithm. React compares the Virtual DOM with Real DOM. It finds out the changed nodes and updates only the changed nodes in Real DOM leaving the rest nodes as it is. This process is called Reconciliation.
+
+7. What is React Fibre?
+- It is just plain JS object with some properties.
+- The current react reconciler, the fibre reconciler is named after this object and is the default reconciler since react version 16.
+- Ref. https://www.geeksforgeeks.org/what-is-react-fiber/
+
+8. When and why do we need to use Keys in react?
+- Usually we use keys when we are trying to loop over a particular list or array of data. 
+- When we loop using map functions in JS it is recommended to use keys with it as it is a unique identifier.
+- Key are used to give a stable identity to an item of the list.
+- It will be helpful to react when we do the rendering so it will check with the help of keys to which node is being updated and where is it placed. So if any node is added into the starting so react will render the new added node and keeping the old nodes as it is.
+
+9. Can we use index as keys in React ?
+- React official documentation says never use index as keys.
+- If there is no id present in the backend data ask backend team to add it.
+- If you don’t have unique id so use index but it is not recommend so it is better to index as keys should be present while using map.
+
+10. What is props in React?
+- Props stands for properties. Props are arguments passed into React components. props are used in React to pass data from one component to another (from a parent component to a child component(s)). They are useful when you want the flow of data in your app to be dynamic.
+
+11. What is config driven UI?
+- Data received from backend so Ui will be updated as the date received.
+- Suppose if want to make changes in the UI so that data must be coming from one of the backend API.
+- So it can be different for different conditions. 
+- If we are in Mumbai so based on that if there is some different data on backend so with the help of the data UI will be changed so it is known as config driven UI.
+
+12. What is Virtual DOM?
+* Virtual DOM is a light-weight abstraction of the DOM. You can think of it as a copy of the DOM, that can be updated without affecting the actual DOM. It has all the same properties as the real DOM object, but doesn’t have the ability to write to the screen like the real DOM.
+* Virtual DOM is just like a blueprint of a machine, can do the changes in the blueprint but those changes will not directly apply to the machine.
+* Reconciliation is a process to compare and keep in sync the two files (Real and Virtual DOM). Diffing algorithm is a technique of reconciliation which is used by React.
+
