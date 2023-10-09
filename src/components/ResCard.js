@@ -10,7 +10,7 @@ const ResCard = (props) => {
             className="res-logo"
             src={CDN_URL + cloudinaryImageId} alt="card-logo" />
             <h3>{name}</h3>
-            <h4>{"Ratings " + avgRating}</h4>
+            <h4>{"Rating : " + avgRating}</h4>
             <h4>{cuisines.join(", ")}</h4>
             <h4>{costForTwo}</h4>
             <h4>{"Avg Delivery Time " + deliveryTime}</h4>

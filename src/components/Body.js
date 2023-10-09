@@ -14,12 +14,13 @@ const Body = () => {
     const [restaurantList , setRestaurantList] = useState([]);
     const [searchData , setSearchData] = useState([]);
 
+    // console.log("useEffect Called");
     useEffect(() => {
         fetchData();
     }, [])
 
     const fetchData = async () => {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5941586&lng=73.7036514&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.993799&lng=73.753321&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
     
         const json = await data.json();
         // console.log(json);
