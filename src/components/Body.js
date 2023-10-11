@@ -1,6 +1,8 @@
 import ResCard from "./ResCard";
 import Shimmer from "./Shimmer";
 import { useState , useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Restautant_List_URL } from "../utils/constants";
 
 function filterData(searchText , restaurantList) {
     const data = restaurantList.filter((res) => 
@@ -14,16 +16,14 @@ const Body = () => {
     const [restaurantList , setRestaurantList] = useState([]);
     const [searchData , setSearchData] = useState([]);
 
-    // console.log("useEffect Called");
     useEffect(() => {
         fetchData();
     }, [])
 
     const fetchData = async () => {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.993799&lng=73.753321&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const data = await fetch(Restautant_List_URL);
     
         const json = await data.json();
-        // console.log(json);
 
         setRestaurantList(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setSearchData(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -64,7 +64,7 @@ const Body = () => {
 
                 {
                     searchData.map
-                        (restaurant => <ResCard key={restaurant.info.id} resData = {restaurant}/>)
+                     (restaurant => <Link key={restaurant.info.id} to = {"/Restaurants/" + restaurant.info.id}><ResCard resData = {restaurant}/> </Link>)
                 }
         
             </div>
