@@ -3,6 +3,7 @@ import Shimmer from "./Shimmer";
 import { useState , useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Restautant_List_URL } from "../utils/constants";
+import useOnlineStaus from "../utils/useOnlineStatus";
 
 function filterData(searchText , restaurantList) {
     const data = restaurantList.filter((res) => 
@@ -22,12 +23,15 @@ const Body = () => {
 
     const fetchData = async () => {
         const data = await fetch(Restautant_List_URL);
-    
         const json = await data.json();
 
         setRestaurantList(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setSearchData(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
+
+    const onlineStatus = useOnlineStaus();
+
+    if(onlineStatus === false) return <h1>Looks like you are offline ! Kindly check your internet Connection</h1>
  
     return restaurantList.length === 0 ? (
     <Shimmer />
