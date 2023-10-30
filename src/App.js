@@ -29,7 +29,7 @@ const router = createBrowserRouter(
                     } ,
                 {
                     path : "/about", 
-                    element: <About />
+                    element: <About />,
                     } ,
         
                 {
@@ -38,7 +38,7 @@ const router = createBrowserRouter(
                     },
                 {
                     path : "/Restaurants/:resId", 
-                    element: <RestaurantMenu />
+                    element: <RestaurantMenu />,
                     } 
             ],
             errorElement : <Error/>

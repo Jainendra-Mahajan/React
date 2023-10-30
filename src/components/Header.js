@@ -8,18 +8,18 @@ const Header = () => {
     const [login , setLogin] = useState("login");
     const onlineStatus = useOnlineStaus();
     return (
-        <div className="header">
-            <div className="logo-container">
-                <Link to = "/"><img className="logo" src={LOGO_URL} alt="logo" /> </Link>
+        <div className="flex justify-between bg-pink-200 shadow-lg">
+            <div>
+                <Link to = "/"><img className="w-52" src={LOGO_URL} alt="logo" /> </Link>
             </div>
 
             <div className="nav-items">
-                <ul>
-                    <li>Online Status: {onlineStatus ? "✅" : "🔴"}</li>
-                    <li> <Link to = "/">Home</Link></li>
-                    <li><Link to = "/about">About Us</Link></li>
-                    <li><Link to = "/contact">Contact Us</Link></li>
-                    <li>Cart</li>
+                <ul className="flex m-4 p-4">
+                    <li className="px-4 ">Online Status: {onlineStatus ? "✅" : "🔴"}</li>
+                    <li className="px-4"> <Link to = "/">Home</Link></li>
+                    <li className="px-4"><Link to = "/about">About Us</Link></li>
+                    <li className="px-4"><Link to = "/contact">Contact Us</Link></li>
+                    <li className="px-4">Cart</li>
                     <button className="login-btn" onClick={() => {
                         login === "login" ? 
                         setLogin("logout") : 
@@ -30,5 +30,6 @@ const Header = () => {
         </div>
     );
 };
+
 
 export default Header;
