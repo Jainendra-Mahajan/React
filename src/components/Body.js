@@ -1,4 +1,4 @@
-import ResCard from "./ResCard";
+import ResCard,{withPromotedLabel} from "./ResCard";
 import Shimmer from "./Shimmer";
 import { useState , useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -16,6 +16,10 @@ const Body = () => {
     const [searchText , setsearchText] = useState("");
     const [restaurantList , setRestaurantList] = useState([]);
     const [searchData , setSearchData] = useState([]);
+
+    console.log(restaurantList);
+
+    const RestaurantCardPromoted = withPromotedLabel(ResCard);
 
     useEffect(() => {
         fetchData();
@@ -68,9 +72,8 @@ const Body = () => {
 
                 {
                     searchData.map
-                     (restaurant => <Link key={restaurant.info.id} to = {"/Restaurants/" + restaurant.info.id}><ResCard resData = {restaurant}/> </Link>)
+                     (restaurant => <Link key={restaurant.info.id} to = {"/Restaurants/" + restaurant.info.id}><ResCard resData = {restaurant}/></Link>)
                 }
-        
             </div>
         </div>
     );

@@ -16,6 +16,18 @@ const ResCard = (props) => {
             <h4>{"Avg Delivery Time " + deliveryTime}</h4>
         </div>
     );
+};
+
+//higher order function which adds promoted label to the card if promoted is present.
+export const withPromotedLabel = (ResCard) => {
+    return (props) => {
+        return (
+            <div>
+                <label>Promoted</label>
+                <ResCard {...props}/>
+            </div>    
+        );
+    }
 }
 
 export default ResCard;
