@@ -1,16 +1,18 @@
 import { LOGO_URL } from "../utils/constants";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStaus from "../utils/useOnlineStatus";
+import UserContext from "../utils/userContext";
 
 const Header = () => {
 
     const [login , setLogin] = useState("login");
     const onlineStatus = useOnlineStaus();
+    const {loggedInUser} = useContext(UserContext);
     return (
         <div className="flex justify-between bg-pink-200 shadow-lg">
             <div>
-                <Link to = "/"><img className="w-52" src={LOGO_URL} alt="logo" /> </Link>
+                <Link to = "/"><img className="w-52" src={LOGO_URL} alt="logo" /></Link>
             </div>
 
             <div className="nav-items">
@@ -25,6 +27,7 @@ const Header = () => {
                         setLogin("logout") : 
                         setLogin("login");
                     }}>{login}</button>
+                    <li className="px-4 font-bold" >{loggedInUser}</li>
                 </ul>
             </div>
         </div>

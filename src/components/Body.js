@@ -1,9 +1,10 @@
 import ResCard,{withPromotedLabel} from "./ResCard";
 import Shimmer from "./Shimmer";
-import { useState , useEffect } from "react";
+import { useState , useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Restautant_List_URL } from "../utils/constants";
 import useOnlineStaus from "../utils/useOnlineStatus";
+import UserContext from "../utils/userContext";
 
 function filterData(searchText , restaurantList) {
     const data = restaurantList.filter((res) => 
@@ -16,8 +17,9 @@ const Body = () => {
     const [searchText , setsearchText] = useState("");
     const [restaurantList , setRestaurantList] = useState([]);
     const [searchData , setSearchData] = useState([]);
+    
 
-    console.log(restaurantList);
+    // console.log(restaurantList);
 
     const RestaurantCardPromoted = withPromotedLabel(ResCard);
 
@@ -37,6 +39,8 @@ const Body = () => {
 
     if(onlineStatus === false) return <h1>Looks like you are offline ! Kindly check your internet Connection</h1>
  
+    const {loggedInUser , setUserName} = useContext(UserContext)
+    
     return restaurantList.length === 0 ? (
     <Shimmer />
     ) : (
@@ -67,6 +71,17 @@ const Body = () => {
                     }}
                     > Top Rated Restaurants
                 </button>
+
+                    <div>
+
+                <label>UserName : </label>
+
+                <input type="text"
+                className="border border-solid p-2"
+                value={loggedInUser} 
+                onChange={(e) => setUserName(e.target.value)}
+                />
+                </div>
             </div>
             <div className="flex flex-wrap">
 

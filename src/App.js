@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "../src/components/Header";
 import Body from "../src/components/Body";
@@ -7,12 +7,24 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import { createBrowserRouter , RouterProvider , Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
+import UserContext from "./utils/userContext";
 
 const AppComponent = () => {
+
+    useEffect(() => {
+        const data = {
+            name : "Silent Killer"
+        }
+        setUserName(data.name);
+    } , [])
+
+    const [userName , setUserName] = useState();
     return (
         <div className="app">
+            <UserContext.Provider value={{loggedInUser : userName , setUserName}}>
             <Header />
             <Outlet />
+            </UserContext.Provider>
         </div>
     );
 };
