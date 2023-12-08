@@ -10,11 +10,13 @@ const RestaurantMenu = () => {
     const menuItem = useRestaurantMenu(resId);
     const [showIndex , setShowIndex] = useState(null)
 
-    if(menuItem === null) return <Shimmer />;
+    if(menuItem === null) return <Shimmer/>
 
     const {name , cuisines , costForTwo} = menuItem?.cards[0]?.card?.card?.info;
     const categories = menuItem?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(c => c?.card?.card?.["@type"] ===
      "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
+
+    //  console.log(categories);
     return (
         <div className="text-center my-4">
             <h1 className="font-bold ">{name}</h1>
