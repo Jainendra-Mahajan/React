@@ -48,6 +48,7 @@ const Body = () => {
             <div className="filter flex">
 
                 <input className="pl-3 mb-4 border border-solid "
+                data-testid = "searchText"
                 placeholder="Enter Restaurant Name"
                 value={searchText}
                 onChange={(e) => setsearchText(e.target.value)}/>
@@ -55,7 +56,6 @@ const Body = () => {
                 <button className="ml-6 h-8 px-4 font-semibold rounded-md bg-black text-white"
                     onClick={() => { 
                        const data = filterData (searchText, restaurantList);
-                       console.log(searchText);
                        setSearchData(data);
                 }}>
                   search  
@@ -63,6 +63,7 @@ const Body = () => {
 
                 <button 
                     className="ml-4 mb-4 bg-indigo-600 text-white text-sm leading-6 font-medium py-2 px-2 rounded-lg" 
+                    data-testid = "topratedbutton"
                     onClick={() => {
                         const filterData = restaurantList.filter(
                             (res) => res.info.avgRating > 4

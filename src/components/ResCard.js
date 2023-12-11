@@ -5,7 +5,7 @@ const ResCard = (props) => {
     const {cloudinaryImageId , name , avgRating, cuisines, costForTwo } = resData?.info
     const {deliveryTime} = resData?.info.sla
     return (
-        <div className="m-4 p-4 w-52" style={{backgroundColor : "#f0f0f0"}}>
+        <div data-testid = "rescard" className="m-4 p-4 w-52" style={{backgroundColor : "#f0f0f0"}}>
             <img 
             className="res-logo"
             src={CDN_URL + cloudinaryImageId} alt="card-logo" />

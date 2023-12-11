@@ -1,0 +1,87 @@
+{
+    "info": {
+        "id": "617590",
+        "name": "Domino's Pizza",
+        "cloudinaryImageId": "hqjkc998dxzzu7ndaydu",
+        "locality": "Phase 2",
+        "areaName": "Hinjawadi",
+        "costForTwo": "₹400 for two",
+        "cuisines": [
+            "Pizzas",
+            "Italian",
+            "Pastas",
+            "Desserts"
+        ],
+        "avgRating": 3.7,
+        "feeDetails": {
+            "restaurantId": "617590",
+            "fees": [
+                {
+                    "name": "BASE_DISTANCE",
+                    "fee": 3500
+                },
+                {
+                    "name": "BASE_TIME"
+                },
+                {
+                    "name": "ANCILLARY_SURGE_FEE"
+                }
+            ],
+            "totalFee": 3500
+        },
+        "parentId": "2456",
+        "avgRatingString": "3.7",
+        "totalRatingsString": "500+",
+        "sla": {
+            "deliveryTime": 25,
+            "serviceability": "SERVICEABLE",
+            "slaString": "25 mins",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2023-12-11 22:59:00",
+            "opened": true
+        },
+        "badges": {},
+        "isOpen": true,
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {},
+                "textBased": {},
+                "textExtendedBadges": {}
+            }
+        },
+        "aggregatedDiscountInfoV3": {
+            "header": "₹150 OFF",
+            "subHeader": "ABOVE ₹299",
+            "discountTag": "FLAT DEAL"
+        },
+        "orderabilityCommunication": {
+            "title": {},
+            "subTitle": {},
+            "message": {},
+            "customIcon": {}
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {}
+    },
+    "analytics": {
+        "context": "seo-data-6dd9f9ec-e5fb-470e-a8f2-b75ddde56705"
+    },
+    "cta": {
+        "link": "https://www.swiggy.com/restaurants/dominos-pizza-phase-2-hinjawadi-pune-617590",
+        "text": "RESTAURANT_MENU",
+        "type": "WEBLINK"
+    },
+    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+}

@@ -6,8 +6,6 @@ it("Should show text of button on contact page", () => {
     render(<Contact/>)
 
     const inputPlaceHolder = screen.getByText("Submit");
-    // console.log(inputPlaceHolder)
-
     expect(inputPlaceHolder).toBeInTheDocument();
  })
 
@@ -15,8 +13,6 @@ it("Should show text of button on contact page", () => {
     render(<Contact/>);
 
     const inputName = screen.getByPlaceholderText("name");
-    
-
     expect(inputName).toBeInTheDocument();
  });
 
@@ -24,7 +20,6 @@ it("Should show text of button on contact page", () => {
     render(<Contact/>);
 
     const inputBox = screen.getAllByRole("textbox");
-    console.log(inputBox);
 
     expect(inputBox).toHaveLength(2);
  });
