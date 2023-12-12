@@ -16,6 +16,8 @@ Slice (cartSlice)
 dispatch(action)
 Selector
 
+#Tailwind CSS
+
 #Testing (devloper)
 Unit Testing
 Integration Testing
